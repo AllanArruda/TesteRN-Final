@@ -1,0 +1,30 @@
+<zk>
+    <window title="Relatórios" border="normal" mode="modal" closable="true"
+            apply="org.zkoss.bind.BindComposer"
+            viewModel="@id('vm') @init('rodarte.testern.viewmodel.VmPageRelatorios')">
+            <grid height="650px" model="@load(vm.alunosNotas)"
+              emptyMessage="Não existem dados armazenados na base!">
+            <columns>
+                <column label="Identificação" width="120px" />
+                <column label="Nome" width="150px" />
+                <column label="Sexo" width="80px" />
+                <column label="Data de Nascimento" width="200px" />
+                <column label="Nota 1º Semestre" width="200px" />
+                <column label="Nota 2º Semestre" width="200px" />
+                <column label="Nota 3º Semestre" width="200px" />
+            </columns>
+            <template name="model">
+                <row>
+                    <label value="@load(each.identificacao)" />
+                    <label value="@load(each.nome)" />
+                    <label value="@load(each.sexo)" />
+                    <label value="@load(each.dataNascimento)" />
+                    <label value="@load(each.nota_1Semestre)" />
+                    <label value="@load(each.nota_2Semestre)" />
+                    <label value="@load(each.nota_3Semestre)" />
+                </row>
+            </template>
+        </grid>
+
+    </window>
+</zk>
